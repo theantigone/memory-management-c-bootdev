@@ -5,6 +5,14 @@
 ### How it works:
 ~~1. Download the [``µnit`` framework](https://github.com/nemequ/munit/)~~
 > The µnit framework is already installed in the repository...
+> 
+> When cloning this repository, if the ``µnit`` repository is empty, run:
+```shell
+~/bootdev-memory-management/ $ git submodule update --init --recursive
+```
+> to update the ``µnit`` repository.
+> Source: https://github.blog/open-source/git/working-with-submodules/
+
 2. Download the exercise files inside [Boot.dev's Memory Management chapters and lessons](https://www.boot.dev/lessons/44a4421c-cc49-4472-bbad-a14f81f860b4) (exercise.c, exercise.h, main.c, etc.)
 3. Edit the ``main.c`` file, which usually contains the ``µnit`` framework, to its default configurations (on [Boot.dev's Memory Management Course](https://www.boot.dev/courses/learn-memory-management-c), it modifies the ``µnit`` framework to its own liking).
 > Refer to [µnit's documentation](https://nemequ.github.io/munit/) on how to format the unit test cases to their default configurations.
