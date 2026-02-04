@@ -584,6 +584,10 @@ int munit_suite_main_custom(const MunitSuite* suite,
 // ADD THIS LINE:
 #define assert(expr)                      munit_assert(expr)
 
+// ADD THESE:
+#define assert_size(a, op, b, ...)        munit_assert_size(a, op, b)
+#define assert_int_equal(a, b, ...)       munit_assert_int(a, ==, b)
+
 /* =============================================================
    End Boot.dev Compatibility Layer
    ============================================================= */
