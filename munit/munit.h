@@ -581,6 +581,9 @@ int munit_suite_main_custom(const MunitSuite* suite,
 #define assert_ptr_not_equal(a, b, ...)   munit_assert_ptr_not_equal(a, b)
 #define assert_double(a, op, b, ...)      munit_assert_double(a, op, b)
 
+// ADD THIS LINE:
+#define assert(expr)                      munit_assert(expr)
+
 /* =============================================================
    End Boot.dev Compatibility Layer
    ============================================================= */
