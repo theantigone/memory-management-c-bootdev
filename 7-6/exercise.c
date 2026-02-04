@@ -3,10 +3,12 @@
 
 void swap(void *vp1, void *vp2, size_t size) {
   // ?
-	int *buffer=malloc(size*sizeof(size));
+	void*buffer=malloc(size);
 	if(!buffer)
 		return;
+	memcpy(buffer,vp1,size);
 	memcpy(vp1,vp2,size);
+	memcpy(vp2,buffer,size);
 	free(buffer);
 }
 
