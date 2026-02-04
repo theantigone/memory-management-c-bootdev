@@ -7,7 +7,8 @@ void stack_free(stack_t *stack) {
   // ?
 	if(!stack)
 		return;
-	free(stack->data);
+	if(!stack->data)
+		free(stack->data);
 	free(stack);
 }
 
