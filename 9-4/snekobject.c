@@ -8,12 +8,12 @@ snek_object_t *new_snek_string(char *value) {
 	if(!ptr)
 		return NULL;
 	size_t len=strlen(value);
-	ptr->kind=STRING;
 	ptr->data.v_string=malloc(len+1);
 	if(!ptr->data.v_string){
 		free(ptr->data.v_string);
 		return NULL;
 	}
+	ptr->kind=STRING;
 	strcpy(ptr->data.v_string,value);
 	return ptr;
 }
