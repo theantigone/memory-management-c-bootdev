@@ -591,6 +591,9 @@ int munit_suite_main_custom(const MunitSuite* suite,
 // ADD THIS LINE:
 #define assert_float(a, op, b, ...)       munit_assert_double(a, op, b)
 
+// ADD THIS:
+#define assert_ptr(a, op, b, ...)         munit_assert_ptr(a, op, b)
+
 /* =============================================================
    End Boot.dev Compatibility Layer
    ============================================================= */
