@@ -1,4 +1,4 @@
-struct snek_object_t;
+typedef struct SnekObject snek_object_t;
 typedef struct{
     snek_object_t*  x;
     snek_object_t*  y;
