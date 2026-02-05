@@ -7,8 +7,7 @@ snek_object_t *new_snek_array(size_t size) {
 	snek_object_t*ptr=malloc(sizeof(snek_object_t));
 	if(!ptr)
 		return NULL;
-	size_t len=sizeof(snek_object_t)/sizeof(snek_object_t[0]);
-	snek_object_t**arr=calloc(len,sizeof(snek_object_t*));
+	snek_object_t**arr=calloc(size,sizeof(snek_object_t*));
 	if(!arr){
 		free(arr);
 		return NULL;

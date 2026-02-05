@@ -594,6 +594,9 @@ int munit_suite_main_custom(const MunitSuite* suite,
 // ADD THIS:
 #define assert_ptr(a, op, b, ...)         munit_assert_ptr(a, op, b)
 
+// ADD THIS LINE:
+#define assert_ptr_null(ptr, ...)         munit_assert_null(ptr)
+
 /* =============================================================
    End Boot.dev Compatibility Layer
    ============================================================= */
