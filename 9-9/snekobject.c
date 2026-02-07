@@ -1,6 +1,7 @@
 #include "snekobject.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 
 snek_object_t *snek_add(snek_object_t *a, snek_object_t *b) {
   // ?
@@ -29,18 +30,23 @@ snek_object_t *snek_add(snek_object_t *a, snek_object_t *b) {
 		case STRING:
 			if(b->kind!=STRING)
 				return NULL;
-			size_t len=snek_length(a)+snek_length(b)+1;
-			snek_object_t*ptr=calloc(len,sizeof(snek_object_t));
-			strcat(ptr->data.v_string,a->data.v_string);
-			strcat(ptr->data.v_string,b->data.v_string);
-			snek_object_t* str=new_snek_string(ptr->data.v_string);
+			int len=snek_length(a)+snek_length(b);
+			char*ptr=calloc(len,sizeof(char));
+			strcat(ptr,a->data.v_string);
+			strcat(ptr,b->data.v_string);
+			snek_object_t* str=new_snek_string(ptr);
 			free(ptr);
 			return str;
 		case VECTOR3:
 			if(b->kind!=VECTOR3)
 				return NULL;
-			snek_object_t*vec=new_snek_vector3(a->data.v_vector3.x,a->data.v_vector3.y,a->data.v_vector3.z);
-			return vec;
+			snek_object_t*vex=new_snek_vector3(new_snek_integer(0),new_snek_integer(0),new_snek_integer(0));
+			vex->data.v_vector3.x=snek_add(a->data.v_vector3.x,b->data.v_vector3.x);
+			vex->data.v_vector3.y=snek_add(a->data.v_vector3.y,b->data.v_vector3.y);
+			vex->data.v_vector3.z=snek_add(a->data.v_vector3.z,b->data.v_vector3.z);
+			return vex;
+
+
 		case ARRAY:
 			if(b->kind!=ARRAY)
 				return NULL;
